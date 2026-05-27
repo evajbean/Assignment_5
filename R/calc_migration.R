@@ -7,7 +7,7 @@
 #' @param m migration rate; default = 0.1
 #' output: n_t_out
 
-calc_migration <- function(n_t_in, m){
+calc_migration <- function(n_t_in, m=0.1){
   
   n_t_out = n_t_in*m
   

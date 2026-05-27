@@ -1,0 +1,53 @@
+---
+title: "Lobster MPA Fishery Spillover"
+author: "Eva Juengling Bean, Nils Boberg, Grace Bryan"
+format: html
+editor: visual
+---
+
+```{r}
+#| label: load-libraries
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(here)
+library(janitor)
+
+```
+
+```{r}
+#| label: source-functions
+#| echo: true 
+
+source(here("R/calculate_k.R")) # source module 1
+source(here("R/calc_pop_change.R")) # source module 2
+source(here("R/calc_migration.R")) # source module 3
+
+```
+
+```{r}
+#| label: create-data
+#| echo: true
+
+mpa_area <- seq(5, 50, by=5)
+data <- as.data.frame(mpa_area)
+data$k <- NA
+data$n_in <- NA
+data$n_out <- NA
+
+```
+
+```{r}
+#| label: run-program
+#| echo: true
+
+for (i in 1:length(mpa_area)){
+  data$k[i]=calculate_k(mpa_area=data$mpa_area[i])
+  
+  data$n_in[i]=calc_pop_change(k=data$k[i])
+  
+  data$n_out[i]=calc_migration(n_t_in=data$n_in[i])
+}
+```

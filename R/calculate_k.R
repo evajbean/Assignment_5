@@ -9,5 +9,6 @@
 
 calculate_k <- function(mpa_area, max_density=10){
   k = mpa_area*max_density
+  
   return(k)
 }
