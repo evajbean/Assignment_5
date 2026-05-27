@@ -5,7 +5,7 @@
 #' This (simplified) program calculates the net profit incurred by lobster 
 #' fisheries due to MPA spillover
 #' 
-#' Initial inputs for full program: MPA Area, N0 (initial population)
+#' Initial inputs for full program: mpa_area, n_0 (initial population)
 #' @param max_density maximum number of lobsters that can fit in on square km area
 #' @param K carrying capacity (number of lobsters)
 #' @param r maximum growth rate; default = 0.3
