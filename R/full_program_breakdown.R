@@ -13,4 +13,4 @@
 #' @param q catch rate; default = 0.5
 #' @param unit_price price paid on the market for one lobster caught ($/lobster)
 #' @param unit_cost cost of establishing an MPA for every unit area ($/km squared)
-#' Outputs: net profit
+#' @returns net profit from closures and fishery revenue 
