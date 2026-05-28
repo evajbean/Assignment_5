@@ -14,6 +14,7 @@ editor: visual
 library(tidyverse)
 library(here)
 library(janitor)
+library(ggplot2)
 
 ```
 
@@ -66,4 +67,18 @@ for (i in 1:length(mpa_area)){
   
   data$net_profit[i] <- net_profit(profit = data$profit[i], cost = data$cost[i])
 }
+```
+
+```{r}
+#| label: plot
+#| echo: true
+
+net_profit_plot <- ggplot(data, aes(x=mpa_area,y=net_profit))+
+  geom_line()+
+  geom_point()+
+  xlab("MPA Area")+
+  ylab("Net Profit ($)")+
+  theme_bw()
+
+net_profit_plot
 ```
