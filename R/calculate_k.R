@@ -6,6 +6,7 @@
 #' inputs: mpa_area (km2)
 #' @param max_density maximum number of lobsters that can be in a given km2 area;
 #' default = 10
+#' @returns carrying capacity of lobsters in an MPA depending on it's area
 
 calculate_k <- function(mpa_area, max_density=10){
   k = mpa_area*max_density
