@@ -26,8 +26,8 @@ source(here("R/calc_pop_change.R")) # source module 2
 source(here("R/calc_migration.R")) # source module 3
 source(here("R/calc_catch.R")) # source module 4
 source(here("R/calc_profit.R")) # source module 5
-source(here("R/calculate_MPA_cost.R")) # source module 7
-source(here("R/calculate_net_profit.R")) # source module 6
+source(here("R/calc_MPA_cost.R")) # source module 7
+source(here("R/net_profit.R")) # source module 6
 
 ```
 
