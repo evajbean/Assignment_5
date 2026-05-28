@@ -24,6 +24,8 @@ library(janitor)
 source(here("R/calculate_k.R")) # source module 1
 source(here("R/calc_pop_change.R")) # source module 2
 source(here("R/calc_migration.R")) # source module 3
+source(here("R/calc_catch.R")) # source module 4
+source(here("R/calc_profit.R")) # source module 5
 
 ```
 
@@ -36,6 +38,8 @@ data <- as.data.frame(mpa_area)
 data$k <- NA
 data$n_in <- NA
 data$n_out <- NA
+data$catch <- NA
+data$profit <- NA
 
 ```
 
@@ -49,5 +53,9 @@ for (i in 1:length(mpa_area)){
   data$n_in[i]=calc_pop_change(k=data$k[i])
   
   data$n_out[i]=calc_migration(n_t_in=data$n_in[i])
+  
+  data$catch[i]=calc_catch(n_t_out=data$n_out[i])
+  
+  data$profit[i]=calc_profit(catch=data$catch[i])
 }
 ```
