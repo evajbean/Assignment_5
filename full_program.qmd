@@ -26,6 +26,8 @@ source(here("R/calc_pop_change.R")) # source module 2
 source(here("R/calc_migration.R")) # source module 3
 source(here("R/calc_catch.R")) # source module 4
 source(here("R/calc_profit.R")) # source module 5
+source(here("R/calc_MPA_cost.R")) # source module 7
+source(here("R/net_profit.R")) # source module 6
 
 ```
 
@@ -40,6 +42,8 @@ data$n_in <- NA
 data$n_out <- NA
 data$catch <- NA
 data$profit <- NA
+data$cost <- NA
+data$net_profit <- NA
 
 ```
 
@@ -57,5 +61,9 @@ for (i in 1:length(mpa_area)){
   data$catch[i]=calc_catch(n_t_out=data$n_out[i])
   
   data$profit[i]=calc_profit(catch=data$catch[i])
+  
+  data$cost[i] <- calc_MPA_cost(mpa_area = data$mpa_area[i])
+  
+  data$net_profit[i] <- net_profit(profit = data$profit[i], cost = data$cost[i])
 }
 ```
