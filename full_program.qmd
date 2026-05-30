@@ -62,6 +62,7 @@ for (i in 1:length(mpa_area)){
   data$cost[i] <- calc_MPA_cost(mpa_area = data$mpa_area[i])
   
   data$net_profit[i] <- calc_net_profit(catch = data$catch[i], cost = data$cost[i])
+  
 }
 ```
 
