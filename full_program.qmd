@@ -43,6 +43,7 @@ data$n_out <- NA
 data$catch <- NA
 data$cost <- NA
 data$net_profit <- NA
+data$k_fishing <- NA
 
 ```
 
@@ -52,6 +53,8 @@ data$net_profit <- NA
 
 for (i in 1:length(mpa_area)){
   data$k[i]=calculate_k(mpa_area=data$mpa_area[i])
+  
+  data$k_fishing[i] <- calculate_k(mpa_area = data$mpa_area[i] * 2) # simply assumes fishing area is twice the MPA size
   
   data$n_in[i]=calc_pop_change(k=data$k[i])
   
