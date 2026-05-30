@@ -12,10 +12,10 @@
 #' 
 #' @returns net profit  
 
-calc_profit <- function(catch, unit_price=25, cost){
+calc_net_profit <- function(catch, unit_price=25, cost){
   
   catch_profit <- catch*unit_price
-  net_profit <- cost-catch_profit
+  net_profit <- catch_profit-cost
   
   return(net_profit)
 }
