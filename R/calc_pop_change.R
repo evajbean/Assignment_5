@@ -8,7 +8,7 @@
 #' @param k carrying capacity calculated in calculate_k.R module
 #' @param r growth rate; default = 0.3
 #' @param t number of years; default = 10
-#' output: n_t_in (the number of lobsters inside the MPA, given k, 
+#' @returns n_t_in (the number of lobsters inside the MPA, given k, 
 #' after maximum time)
 
 calc_pop_change <- function(n_0=30, k, r=0.3, t=10){
