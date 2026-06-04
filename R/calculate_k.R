@@ -9,6 +9,7 @@
 #' @returns carrying capacity of lobsters in an MPA depending on it's area
 
 calculate_k <- function(mpa_area, max_density=10){
+  if (mpa_area < 0) stop("MPA area cannot be negative")
   k = mpa_area*max_density
   
   return(k)

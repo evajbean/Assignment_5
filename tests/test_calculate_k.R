@@ -20,4 +20,13 @@ test_that("calculate_k_works", {
   big <- calculate_k(mpa_area=test.data[2])
   expect_true(big>small)
 })
+
+test_that("function errors when mpa area < 0",{
+  
+  test.data <- c(0,10,-999)
+  
+  expect_error(calculate_k(mpa_area = test.data[3]), "MPA area cannot be negative")
+})
+
+
   
