@@ -13,6 +13,7 @@
 
 calc_pop_change <- function(n_0=30, k, r=0.3, t=10){
   
+  if (is.na(k)) stop("k must have a value")
   n_t_in = n_0*k*exp(r*t)/((k-n_0)+n_0*exp(r*t))
   
   return(n_t_in)
