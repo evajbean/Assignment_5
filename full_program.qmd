@@ -5,6 +5,10 @@ format: html
 editor: visual
 ---
 
+## Overview
+
+This program models the net economic profit to lobster fisheries resulting from spillover out of Marine Protected Areas (MPAs), as a function of MPA size. Lobster populations grow inside the MPA, migrate outward, and are harvested by fishers in the surrounding area. Net profit is calculated by subtracting MPA establishment costs from fishing revenue.
+
 ```{r}
 #| label: load-libraries
 #| echo: false
@@ -17,6 +21,10 @@ library(janitor)
 library(ggplot2)
 
 ```
+
+## Example Run
+
+Here we run the program across a range of MPA areas from 5 to 50 km², using default parameter values (growth rate r = 0.3, migration rate m = 0.1, catch rate q = 0.5, \$25/lobster, \$1000/km² establishment cost).
 
 ```{r}
 #| label: source-functions
@@ -68,6 +76,10 @@ for (i in 1:length(mpa_area)){
   
 }
 ```
+
+## Results
+
+The plot below shows net profit as a function of MPA area. Under default parameters, net profit is negative across all MPA sizes, indicating that establishment costs outweigh fishing revenue from spillover at these parameter values.
 
 ```{r}
 #| label: plot
