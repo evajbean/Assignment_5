@@ -42,6 +42,8 @@ source(here("R/calc_net_profit.R")) # source module 6
 
 ```
 
+![Program Flowchart](flowchart.png)
+
 ```{r}
 #| label: create-data
 #| echo: true
