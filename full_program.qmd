@@ -1,7 +1,9 @@
 ---
 title: "Lobster MPA Fishery Spillover"
 author: "Eva Juengling Bean, Nils Boberg, Grace Bryan"
-format: html
+format:
+  html:
+    embed-resources: true
 editor: visual
 ---
 
