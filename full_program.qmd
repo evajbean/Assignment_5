@@ -5,6 +5,7 @@ format:
   html:
     embed-resources: true
 editor: visual
+embed_resources: true
 ---
 
 ## Overview
